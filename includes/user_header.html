@@ -1,0 +1,39 @@
+<?php # Script 18.1 - header.html
+// This page begins the HTML header for the site.
+
+// Start output buffering:
+ob_start();
+
+// Initialize a session:
+session_start();
+
+// Check for a $page_title value:
+if (!isset($page_title)) {
+	$page_title = 'MOOC ASSISTANT';
+}
+?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>MOOC ASSISTANT</title>
+<link rel="stylesheet" href="css/Index.css" type="text/css">
+<script type="text/javascript"  src="js/Menu.js"></script>
+</head>
+<body>
+<div id="Header">MOOC ASSISTANT</div>
+
+</div>
+
+<div id="Menu">
+    <table id="myMenu" class="nav" width="200" onmouseover="showmenu()" onmouseout="hidemenu()">
+    <tr><td class="menu" align="center"><a href="User_Index.php">主页</a></td>
+        <td class="outside" rowspan="6" align="center" >M<br />E<br />N<br />U</td></tr>
+    <tr><td class="menu" align="center" height="100"><a href="ShowCourse.php">选课</a></td></tr>
+    <tr><td class="menu" align="center" height="100"><a href="Enrolled.php">我的课程</a></td></tr>
+    <tr><td class="menu" align="center" height="100"><a href="Calendar.php">时间表</a></td></tr>
+    <tr><td class="menu" align="center" height="100"><a href="User_Center.php">个人中心</a></td></tr>
+</table>
+</div>
+
+<div id="Content">

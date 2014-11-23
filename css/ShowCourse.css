@@ -1,0 +1,42 @@
+table{
+    table-layout: fixed;
+    }
+
+td{
+    width:240px;
+    text-align:center;
+    word-break: break-all;
+}
+
+.outer{
+    margin-left:20px;
+    width:85%;
+}
+
+.course{
+    float:left;
+    margin-left: 20px;
+}
+
+.ctable:hover{
+    background-color: #CCCCCC;
+}
+
+.cimg{
+    height:135px;
+    width:240px;
+}
+
+.clist{
+    text-align:right;
+    padding-top:0px;
+    padding-bottom:0px;
+    padding-right:15%;
+    border:0px;
+}
+
+.hide{
+    display:none;
+}
+
+    

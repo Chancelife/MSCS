@@ -1,0 +1,21 @@
+
+table {
+    width:85%;
+}
+
+tr{ 
+    border-top:#FF0000 solid 1px; 
+    text-align:center; 
+    line-height:34px;
+    }
+
+td{
+    border-top:#FFFFFF 1px solid;
+    display:block;
+    min-width:70px;
+}
+
+.disable{
+    display:none;
+}
+

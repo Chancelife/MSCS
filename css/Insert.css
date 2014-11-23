@@ -1,0 +1,20 @@
+.normal{
+    color:black;
+}
+
+.warning{
+    color:red;
+}
+.show{
+    text-align:center;
+    display:block;
+}
+.hide{
+    display: none;
+}
+
+#insert{
+    border:#000000 dashed;
+    border-width:1 1 1 1;
+    height:70%;
+}
