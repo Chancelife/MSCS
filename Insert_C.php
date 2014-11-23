@@ -1,27 +1,32 @@
 <?php
 include ('includes/admin_header.html');
 ?>
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="css/Insert.css" type="text/css">
+</head>
 <?php
-echo '<head>';
-echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">';
-echo '<link rel="stylesheet" href="css/Insert.css" type="text/css">';
-echo '</head>';
 
-function get_extension($file)
+
+if(!isset($_SESSION['userid'])){
+    echo '您尚未登录，即将跳转到登录页面';
+    echo '<META HTTP-EQUIV="Refresh" CONTENT="2; URL=Login_V.php">';
+    exit();
+}else
 {
-return pathinfo($file, PATHINFO_EXTENSION);
+    $uid = $_SESSION['userid'];
+    $username = $_SESSION['username'];
 }
-?>
 
+if(!isset($_POST['submit'])){
+    echo '非法的请求，即将返回课程列表';
+    echo '<META HTTP-EQUIV="Refresh" CONTENT="2; URL=Showlist.php">';
+    return; 
+}
 
-<?php 
-header("Content-Type: text/html; charset=utf-8");
-
-if(!isset($_POST['submit']))
-echo '非法的请求，即将返回课程列表';
-echo '<META HTTP-EQUIV="Refresh" CONTENT="2; URL=Showlist.php">';
-return; 
-if($_POST['submit']=='提交'){             //获取表单信息
+if($_POST['submit']=='submit'){             //获取表单信息
 $course_name = $_POST['course_name'];
 $course_des = $_POST['course_des'];
 $course_cla = $_POST['course_cla'];
@@ -32,9 +37,8 @@ $course_img = $_FILES['course_img'];
 }
 $course_des = str_replace("'" , "\'", $course_des);
 
-require('class/conn.php');                
+require('class/conn.php');
 $db_sql="";
-$db_sql2="";
 //未填项提醒标记
 $name_flag = "normal";
 $cla_flag = "normal";
@@ -119,8 +123,8 @@ echo<<<EOT
 </tr> 
 <tr> 
 <td height="25" align="center" valign="middle"><input type="button" onclick="javascript:history.back(-1);" value="返回上一页"></td> 
-</tr> 
-</table> 
+</tr>
+</table>
 EOT;
 ?> 
 <?php include ('includes/admin_footer.html'); ?>

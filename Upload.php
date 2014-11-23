@@ -6,6 +6,11 @@ $arrType=array('image/jpeg','image/gif','image/png','image/bmp','image/pjpeg');
 $max_size='950000';      // 最大文件限制（单位：byte）
 
 
+function get_extension($file)
+{
+    return pathinfo($file, PATHINFO_EXTENSION);
+}
+
         $course_id = mysqli_insert_id($mysqli);
         echo "$course_id";
         $forderpath = './image/'."$course_id";

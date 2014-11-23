@@ -1,11 +1,23 @@
 <?php
 include ('includes/admin_header.html');
+
+if(!isset($_SESSION['userid'])){
+    echo '您尚未登录，即将跳转到登录页面';
+    echo '<META HTTP-EQUIV="Refresh" CONTENT="2; URL=Login_V.php">';
+    exit();
+}else
+{
+    $uid = $_SESSION['userid'];
+    $username = $_SESSION['username'];
+}
 ?>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="css/Insert.css" type="text/css">
-<title>添加课程</title>
 </head>
+
+
 <table id="insert" width="320" height="90" border="1" cellpadding="0" cellspacing="0" > 
 <form name="couse_submit" method="post" action="Insert_C.php" enctype="multipart/form-data"> 
 <tr> 
@@ -42,9 +54,9 @@ include ('includes/admin_header.html');
 <td height="30" align="center"><input name="course_plat" type="text" /></td> 
 </tr> 
 <tr> 
-<td> </td> 
-<td height="25" align="center">  <input name="submit" type="submit" value="提交" /></td> 
-</tr> 
+<td></td> 
+<td height="25" align="center">  <input name="submit" type="submit" value="submit" /></td> 
+</tr>
 <tr><td height="25" align="center">注意：</td>
     <td height="25" align="center">*为必填项</td></tr>
 </form> 
